@@ -1,5 +1,3 @@
-
-
 /*  Fetching datas from the API  */
 
 document.addEventListener("DOMContentLoader", () => {
