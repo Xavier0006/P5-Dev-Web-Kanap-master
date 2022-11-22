@@ -1,3 +1,5 @@
+
+
 /*  Fetching datas from the API  */
 
 document.addEventListener("DOMContentLoader", () => {
@@ -6,7 +8,7 @@ document.addEventListener("DOMContentLoader", () => {
 
 });
 
-/* Get all Items from the API */
+/* Get all Items from the API 
 
 async function getItems() {
 
@@ -14,7 +16,7 @@ async function getItems() {
         const response = await fetch("http://localhost:3000/api/products");
         console.log(response.status);
         if (!response.ok) {
-            throw new Error("Error HTTP");
+            throw new Error("Erreur merci de vérifier votre connexion");
         }
 
         const data = await response.json(); // Formater la réponse en json 
@@ -22,6 +24,7 @@ async function getItems() {
         const itemList = document.getElementById("items");
 
         for (const item of data) {
+            console.log(item);
             addNewItem(item, itemList);
         }
 
@@ -33,5 +36,21 @@ async function getItems() {
 
 }
 
+/* Add nouveau item au DOM */
 
+/* 
+{object} item 
+ {element} Parent
 
+*/
+/*
+const addNewItem = (item, Parent) => {
+
+};
+
+*/
+
+let url = "http://localhost:3000/api/products";
+
+fetch(url).then(response => response.json().then(data => console.log(data))
+);
