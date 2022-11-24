@@ -15,7 +15,7 @@ fetch(url)
         console.log(data);
     })
 
-    // Ajout d'un message en cas d'erreur
+    // Ajout d'une indication console log si il y a une erreur
 
     .catch(e => {
         console.error(e);
@@ -26,13 +26,13 @@ fetch(url)
 
 function addProducts(products) {
 
-    // correspond à ma variable product then data
+    // correspond à ma variable addProducts then data
 
     const itemList = document.getElementById("items");
-    // retrouver l'élément item
+    // retrouver l'élément items
 
-    for (product of products) {
-        itemList.innerHTML +=`
+    for (const product of products) {
+        itemList.innerHTML += `
             <a href="./product.html?id=${product._id}">
             <article>
               <img src="${product.imageUrl}" alt="${product.altTxt}">
@@ -42,6 +42,6 @@ function addProducts(products) {
           </a>`;
 
         // les caracteres `` permettent d'insérer du code HTML le += permet de rajouter autant de contenu que possible
-      
+
     }
 };
