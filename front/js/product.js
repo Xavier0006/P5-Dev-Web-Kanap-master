@@ -28,19 +28,22 @@ fetch(url)
         productDescription.innerText = `${data.description}`;
 
 
-        // couleurs à configurer toujours en phase de test à voir avec Stan si je trouve pas 
-
-        for (const amount of data.colors) {
-            var amountOfColors = new Option(data.colors[amount]);
-
-        }
+        // couleurs à configurer 
 
 
     });
 
 
+    // Add items to cart c'est vraiment pas ouf pour l'instant
 
-// Récuperer les données 
+    let carts = document.querySelectorAll("itemQuantity");
+
+    for(let i=0; i < carts.length; i++) {
+        carts[i].addEventListener("click", () => {
+            
+        })
+    
+    }
 
 
 
