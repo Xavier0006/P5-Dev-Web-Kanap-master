@@ -26,24 +26,33 @@ fetch(url)
         productTitle.innerHTML = `<h1>${data.name}</h1>`;
         displayPrice.innerText = `${data.price}`;
         productDescription.innerText = `${data.description}`;
-
+        console.log(data);
 
         // couleurs à configurer 
+
+        for (number in data.colors) {
+            colors.options[colors.options.length] = new Option(
+                data.colors[number],
+                data.colors[number]
+            );
+        }
 
 
     });
 
 
+
+
     // Add items to cart c'est vraiment pas ouf pour l'instant
 
-    let carts = document.querySelectorAll("itemQuantity");
+/* let carts = document.querySelectorAll("itemQuantity");
 
-    for(let i=0; i < carts.length; i++) {
-        carts[i].addEventListener("click", () => {
-            
-        })
-    
-    }
-
+ for(let i=0; i < carts.length; i++) {
+     carts[i].addEventListener("click", () => {
+         
+     })
+ 
+ }
+*/
 
 
