@@ -4,7 +4,9 @@ const itemImg = document.getElementsByClassName("item__img")[0];
 const productTitle = document.getElementById("title");
 const displayPrice = document.getElementById('price');
 const productDescription = document.getElementById("description");
-const displayColors = document.getElementById("colors");
+const choseQuantity = document.getElementById("quantity");
+const choseColors = document.getElementById("colors");
+
 
 
 // Faire appel à l'API + création d'un nouvel ID afin de récuperer les données
@@ -35,24 +37,26 @@ fetch(url)
                 data.colors[number],
                 data.colors[number]
             );
+            console.log(number);
         }
-
-
     });
 
+// configurer un eventlistener quand l'U clique sur ajouter au panier 
+
+const addToCartBtn = document.getElementById("addToCart");
+
+addToCartBtn.addEventListener("click", event => {
+    addToCartBtn.innerHTML = `Panier ${event.detail}`
+});
 
 
 
-    // Add items to cart c'est vraiment pas ouf pour l'instant
+  //  onclick = (event) => { };
 
-/* let carts = document.querySelectorAll("itemQuantity");
 
- for(let i=0; i < carts.length; i++) {
-     carts[i].addEventListener("click", () => {
-         
-     })
- 
- }
-*/
+
+
+
+
 
 
