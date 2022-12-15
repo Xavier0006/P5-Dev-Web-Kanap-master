@@ -7,7 +7,8 @@ const productDescription = document.getElementById("description");
 const choseQuantity = document.getElementById("quantity");
 const choseColors = document.getElementById("colors");
 
-
+let imageUrl = "";
+let altTxt = "";
 
 // Faire appel à l'API + création d'un nouvel ID afin de récuperer les données
 
@@ -45,13 +46,29 @@ fetch(url)
 
 const addToCartBtn = document.getElementById("addToCart");
 
-addToCartBtn.addEventListener("click", event => {
-    addToCartBtn.innerHTML = `Panier ${event.detail}`
-});
+/* addToCartBtn.addEventListener("click", (event) => {
+    addToCartBtn.innerHTML = `Mon Panier ${event.detail}`
+}); */
 
+const selection = { 
+    id: id,
+    name: productTitle,
+    image: imageUrl,
+    text: altTxt,
+    colors: choseColors.value,
+    quantity: choseQuantity.value,   
+    description: productDescription,
+    price: displayPrice,
+    
+};
 
+const addProductToLocalStorage = JSON.parse(localStorage.getItem("product"));
 
-  //  onclick = (event) => { };
+const pushProduct = () => {
+    addProductToLocalStorage.push(selection);
+    localStorage.setItem("product", JSON.stringify(addProductToLocalStorage));
+    console.log(product);
+};
 
 
 
