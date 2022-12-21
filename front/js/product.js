@@ -48,13 +48,8 @@ const addToCartBtn = document.getElementById("addToCart");
 
 const selection = { 
     id: id,
-    name: productTitle,
-    image: imageUrl,
-    text: altTxt,
     colors: choseColors.value,
     quantity: choseQuantity.value,   
-    description: productDescription,
-    price: displayPrice,
 };
 
 /* const cart = localStorage.getItem("cart"); */
@@ -63,6 +58,7 @@ const addCartToLocalStorage = JSON.parse(localStorage.getItem("cart"));
 const pushProduct = () => {
     addCartToLocalStorage.push(selection);
     localStorage.setItem("cart", JSON.stringify(addCartToLocalStorage));
+    console.log(pushProduct);
 };
 
 // Faire en sorte de voir que le produit est bien dans le localstorage, aucune info actuellement
