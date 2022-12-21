@@ -46,10 +46,6 @@ fetch(url)
 
 const addToCartBtn = document.getElementById("addToCart");
 
-/* addToCartBtn.addEventListener("click", (event) => {
-    addToCartBtn.innerHTML = `Mon Panier ${event.detail}`
-}); */
-
 const selection = { 
     id: id,
     name: productTitle,
@@ -59,16 +55,23 @@ const selection = {
     quantity: choseQuantity.value,   
     description: productDescription,
     price: displayPrice,
-    
 };
 
-const addProductToLocalStorage = JSON.parse(localStorage.getItem("product"));
+/* const cart = localStorage.getItem("cart"); */
+const addCartToLocalStorage = JSON.parse(localStorage.getItem("cart"));
 
 const pushProduct = () => {
-    addProductToLocalStorage.push(selection);
-    localStorage.setItem("product", JSON.stringify(addProductToLocalStorage));
-    console.log(product);
+    addCartToLocalStorage.push(selection);
+    localStorage.setItem("cart", JSON.stringify(addCartToLocalStorage));
 };
+
+// Faire en sorte de voir que le produit est bien dans le localstorage, aucune info actuellement
+
+
+// créer une alerte pour confirmer un ajout au panier 
+// Vérifier qu'il n'y a pas de doublon 
+
+/* for each addCartToLocalStorage f */
 
 
 
