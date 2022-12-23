@@ -15,12 +15,43 @@ if (addCartToLocalStorage === null || addCartToLocalStorage == 0) {
     </div>`;
 }
 
-// Si panier non vide afficher mettre un "else{}"
+
+else {
+    let itemsShown = [];
+
+    for (i=0, i< addCartToLocalStorage.length;) {
+// push addCartToLocalsorage avec un array i ? dans le for boucler sur chaq prod dans le panier avec le html a afficher qt + prix total afficher les articles, t total et valeur panier L27
+    }
+// boucle pour injecter le code en fonction des produits dans le localstorage
+    itemsShown = itemsShown +`
+    <article class="cart__item" data-id="{product-ID}" data-color="{product-color}">
+    <div class="cart__item__img">
+      <img src="../images/product01.jpg" alt="Photographie d'un canapé">
+    </div>
+    <div class="cart__item__content">
+      <div class="cart__item__content__description">
+        <h2>Nom du produit</h2>
+        <p>Vert</p>
+        <p>42,00 €</p>
+      </div>
+      <div class="cart__item__content__settings">
+        <div class="cart__item__content__settings__quantity">
+          <p>Qté : </p>
+          <input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="42">
+        </div>
+        <div class="cart__item__content__settings__delete">
+          <p class="deleteItem">Supprimer</p>
+        </div>
+      </div>
+    </div>
+  </article>
+    `;
+
+}
 
 
 
-
-// Modifier
+// Modifier la quantité
 
 
 

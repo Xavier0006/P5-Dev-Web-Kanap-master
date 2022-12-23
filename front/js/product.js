@@ -65,6 +65,7 @@ const pushProduct = () => {
 
 
 // créer une alerte pour confirmer un ajout au panier 
+
 // Vérifier qu'il n'y a pas de doublon 
 
 /* for each addCartToLocalStorage f */
