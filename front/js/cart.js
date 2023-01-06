@@ -19,7 +19,7 @@ if (addCartToLocalStorage === null || addCartToLocalStorage == 0) {
 else {
   let itemsShown = [];
 
-  for (i = 0, i < addCartToLocalStorage.length, i++) {
+  for (i = 0, i < addCartToLocalStorage.length; i++;) {
     product.push(addCartToLocalStorage[i]);
     // push addCartToLocalsorage avec un array i ? dans le for boucler sur chaq prod dans le panier avec le html a afficher qt + prix total afficher les articles, t total et valeur panier L27
 
@@ -117,12 +117,34 @@ deleteItem();
 
 function totalItems() {
   let totalItems = 0;
-  for (1 in addCartToLocalStorage) {
+  for (addCartToLocalStorage in 1 ) {
+    // parseint devrait renvoyer un nouveau entier... 
+const newQuant = parseInt(addCartToLocalStorage[1].quantity, 10);
 
+//retourner valeur
+totalItems += newQuant;
   }
+
+
+// cela devrait attribuer la valeur et l'afficher correctement
+const totalQuantity = document.getElementById("totalQuantity");
+totalQuantity.textContent = totalItems;
+
+
 }
 totalItems();
 
 // Afficher et calculer le total des articles dans le panier final
 
+function prixTotal() {
+  const calculer = [];
+  for (p = 0; p < addCartToLocalStorage; p++) {
+    const montantTotal = addCartToLocalStorage[p].price * addCartToLocalStorage[p].quantity;
+    calculer.push(montantTotal) 
+  }
+}
+prixTotal();
+
 // !!!! ne pas stocker le prix des articles en local car non sécurisés !!!!
+
+// A faire - Infos user à finir et c'est good 
