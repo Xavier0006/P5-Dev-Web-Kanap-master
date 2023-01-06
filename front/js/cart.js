@@ -81,8 +81,8 @@ function modifyquantity() {
 
     })
   }
-}
-modifyquantity();
+};
+
 
 // Supprimer
 
@@ -111,8 +111,8 @@ function deleteItem() {
     });
   }
 
-}
-deleteItem();
+};
+
 
 
 function totalItems() {
@@ -131,8 +131,8 @@ const totalQuantity = document.getElementById("totalQuantity");
 totalQuantity.textContent = totalItems;
 
 
-}
-totalItems();
+};
+
 
 // Afficher et calculer le total des articles dans le panier final
 
@@ -142,8 +142,8 @@ function prixTotal() {
     const montantTotal = addCartToLocalStorage[p].price * addCartToLocalStorage[p].quantity;
     calculer.push(montantTotal) 
   }
-}
-prixTotal();
+};
+
 
 // !!!! ne pas stocker le prix des articles en local car non sécurisés !!!!
 
