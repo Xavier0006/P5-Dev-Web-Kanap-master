@@ -55,7 +55,7 @@ else {
     itemCart.innerHTML = itemShown;
   }
 
-}
+};
 
 
 
@@ -117,18 +117,18 @@ function deleteItem() {
 
 function totalItems() {
   let totalItems = 0;
-  for (addCartToLocalStorage in 1 ) {
+  for (addCartToLocalStorage in 1) {
     // parseint devrait renvoyer un nouveau entier... 
-const newQuant = parseInt(addCartToLocalStorage[1].quantity, 10);
+    const newQuant = parseInt(addCartToLocalStorage[1].quantity, 10);
 
-//retourner valeur
-totalItems += newQuant;
+    //retourner valeur
+    totalItems += newQuant;
   }
 
 
-// cela devrait attribuer la valeur et l'afficher correctement
-const totalQuantity = document.getElementById("totalQuantity");
-totalQuantity.textContent = totalItems;
+  // cela devrait attribuer la valeur et l'afficher correctement
+  const totalQuantity = document.getElementById("totalQuantity");
+  totalQuantity.textContent = totalItems;
 
 
 };
@@ -140,11 +140,23 @@ function prixTotal() {
   const calculer = [];
   for (p = 0; p < addCartToLocalStorage; p++) {
     const montantTotal = addCartToLocalStorage[p].price * addCartToLocalStorage[p].quantity;
-    calculer.push(montantTotal) 
+    calculer.push(montantTotal)
   }
 };
 
 
-// !!!! ne pas stocker le prix des articles en local car non sécurisés !!!!
+// créer une function pour récuperer les infos contact 
 
-// A faire - Infos user à finir et c'est good 
+// récuperer les infos ? 
+
+const info = {
+  Prenom: document.getElementById("firstName"),
+  Nom: document.getElementById("lastName"),
+  adresse: document.getElementById("address"),
+  ville: document.getElementById("city"),
+  email: document.getElementById("email")
+}
+
+// faire en sorte que tout fonctionne en controllant  
+
+// récuperer données uniquement quand j'en ai besoin au dernier moment
