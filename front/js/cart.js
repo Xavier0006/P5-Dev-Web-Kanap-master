@@ -149,14 +149,81 @@ function prixTotal() {
 
 // récuperer les infos ? 
 
-const info = {
-  Prenom: document.getElementById("firstName"),
-  Nom: document.getElementById("lastName"),
-  adresse: document.getElementById("address"),
-  ville: document.getElementById("city"),
-  email: document.getElementById("email")
-}
+function form() {
+  const order = document.getElementById("order");
+  order.addEventListener("click", (event) => {
+    event.preventDefault();
 
-// faire en sorte que tout fonctionne en controllant  
 
-// récuperer données uniquement quand j'en ai besoin au dernier moment
+    const info = {
+      Prenom: document.getElementById("firstName"),
+      Nom: document.getElementById("lastName"),
+      adresse: document.getElementById("address"),
+      ville: document.getElementById("city"),
+      email: document.getElementById("email")
+    }
+
+    function checkFirstName() {
+      const validateFirstName = contact.firstName;
+      if  { // a completer
+        return true;
+      } else {
+        let firstNameErr = document.getElementById("firstNameErr");
+        firstNameErr.innerText = "Vérifier le prénom";
+      }
+    }
+
+    function checkName() {
+      const validateLastName = contact.lastName;
+      if  { // a completer
+        return true;
+      } else { // retirer else
+        let lastNameErr = document.getElementById("lastNameErr");
+        lastNameErr.innerText = "Vérifier le nom";
+      }
+    }
+
+    function checkAddress() {
+      const validateAddress = contact.address;
+      if  { // a completer
+        return true;
+      } else {
+        let addressErr = document.getElementById("addressErr");
+        addressErr.innerText = "Vérifier l'adresse";
+      }
+    }
+
+    function checkCity() {
+      const validateCity = contact.city;
+      if  { // a completer
+        return true;
+      } else {
+        let cityErr = document.getElementById("cityErr");
+        cityErr.innerText = "Vérifier la ville";
+      }
+    }
+
+    function checkEmail() {
+      const validateEmail = contact.email;
+      if  { // a completer
+        return true;
+      } else {
+        let emailErr = document.getElementById("emailErr");
+        emailErr.innerText = "Vérifier l'email";
+      }
+    }
+
+    // envoi au localstorage
+
+    function validate() {
+      if (validateFirstName() && validateLastName() && validateAddress() && validateCity() && validateEmail()) {
+        localStorage.setItem("contact", json.stringify(contact));
+        return true;
+      } else {
+        alert("Vérifier données saisies")
+      }
+    }
+
+  })
+};
+
