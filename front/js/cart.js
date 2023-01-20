@@ -156,7 +156,7 @@ function form() {
 
 
     const info = {
-      Prenom: document.getElementById("firstName"),
+      Prenom: document.getElementById("firstName")//.value ?,
       Nom: document.getElementById("lastName"),
       adresse: document.getElementById("address"),
       ville: document.getElementById("city"),
@@ -165,37 +165,34 @@ function form() {
 
     function checkFirstName() {
       const validateFirstName = contact.firstName;
-      if  { // a completer
+      if (/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(validateFirstName)) {
         return true;
-      } else {
-        let firstNameErr = document.getElementById("firstNameErr");
-        firstNameErr.innerText = "Vérifier le prénom";
       }
+      let firstNameErr = document.getElementById("firstNameErr");
+      firstNameErr.innerText = "Vérifier le prénom";
     }
 
     function checkName() {
       const validateLastName = contact.lastName;
-      if  { // a completer
+      if (/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(validateLastName)) {
         return true;
-      } else { // retirer else
-        let lastNameErr = document.getElementById("lastNameErr");
-        lastNameErr.innerText = "Vérifier le nom";
       }
+      let lastNameErr = document.getElementById("lastNameErr");
+      lastNameErr.innerText = "Vérifier le nom";
     }
 
     function checkAddress() {
       const validateAddress = contact.address;
-      if  { // a completer
+      if (/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(validateAddress)) {
         return true;
-      } else {
-        let addressErr = document.getElementById("addressErr");
-        addressErr.innerText = "Vérifier l'adresse";
       }
+      let addressErr = document.getElementById("addressErr");
+      addressErr.innerText = "Vérifier l'adresse";
     }
 
     function checkCity() {
       const validateCity = contact.city;
-      if  { // a completer
+      if (/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(validateCity)) {
         return true;
       } else {
         let cityErr = document.getElementById("cityErr");
@@ -205,12 +202,11 @@ function form() {
 
     function checkEmail() {
       const validateEmail = contact.email;
-      if  { // a completer
+      if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(validateEmail)) {
         return true;
-      } else {
-        let emailErr = document.getElementById("emailErr");
-        emailErr.innerText = "Vérifier l'email";
       }
+      let emailErr = document.getElementById("emailErr");
+      emailErr.innerText = "Vérifier l'email";
     }
 
     // envoi au localstorage
@@ -226,4 +222,6 @@ function form() {
 
   })
 };
+
+
 
