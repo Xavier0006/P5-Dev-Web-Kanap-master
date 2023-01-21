@@ -156,11 +156,11 @@ function form() {
 
 
     const info = {
-      Prenom: document.getElementById("firstName"),
-      Nom: document.getElementById("lastName"),
-      adresse: document.getElementById("address"),
-      ville: document.getElementById("city"),
-      email: document.getElementById("email")
+      Prenom: document.getElementById("firstName").value,
+      Nom: document.getElementById("lastName").value,
+      adresse: document.getElementById("address").value,
+      ville: document.getElementById("city").value,
+      email: document.getElementById("email").value
     }
 
     function checkFirstName() {
@@ -194,10 +194,9 @@ function form() {
       const validateCity = contact.city;
       if (/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(validateCity)) {
         return true;
-      } else {
+      }
         let cityErr = document.getElementById("cityErr");
         cityErr.innerText = "Vérifier la ville";
-      }
     }
 
     function checkEmail() {
@@ -221,7 +220,37 @@ function form() {
     }
 
   })
+
+  // Valeurs et produits 
+
+  const prodContact = {
+    produits,
+    contact,
+  }
+
+  // trouver un moyen pour faire en sorte d'envoyer les données au serveur et
+  // Dans la confirmation faire seulement un clear 
+
+  const postReq = {
+    method: 'POST',
+    body: json.stringify(prodContact),
+    headers: {
+      'content-Type': 'application/json'
+    }
+  };
+
+  fetch("http://localhost:3000/api/products/order", postReq)
+    .then(response => response.json())
+    .then(data => {
+      localStorage.setItem("orderId", data.orderId);
+      if (validate()) {
+        document.location.href = ''
+      }
+    })
+
+
 };
+
 
 
 

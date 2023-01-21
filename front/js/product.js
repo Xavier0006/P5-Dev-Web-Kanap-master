@@ -52,23 +52,36 @@ const selection = {
     quantity: choseQuantity.value,   
 };
 
-/* const cart = localStorage.getItem("cart"); */
+
 const addCartToLocalStorage = JSON.parse(localStorage.getItem("cart"));
 
 const pushProduct = () => {
     addCartToLocalStorage.push(selection);
     localStorage.setItem("cart", JSON.stringify(addCartToLocalStorage));
+
     console.log(pushProduct);
 };
 
-// Faire en sorte de voir que le produit est bien dans le localstorage, aucune info actuellement
+let addConf = () => {
+    alert("Le produit est dans le panier")
+}
 
-
-// créer une alerte pour confirmer un ajout au panier 
+let update = false;
 
 // Vérifier qu'il n'y a pas de doublon 
 
-/* for each addCartToLocalStorage f */
+if (addCartToLocalStorage) {
+  addCartToLocalStorage.array.forEach(element => {
+    
+  });
+
+  
+}
+
+
+
+
+
 
 
 
