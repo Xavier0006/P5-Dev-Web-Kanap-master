@@ -156,7 +156,7 @@ function form() {
 
 
     const info = {
-      Prenom: document.getElementById("firstName")//.value ?,
+      Prenom: document.getElementById("firstName"),
       Nom: document.getElementById("lastName"),
       adresse: document.getElementById("address"),
       ville: document.getElementById("city"),
