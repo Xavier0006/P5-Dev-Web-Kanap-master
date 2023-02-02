@@ -214,9 +214,8 @@ function form() {
       if (validateFirstName() && validateLastName() && validateAddress() && validateCity() && validateEmail()) {
         localStorage.setItem("contact", json.stringify(contact));
         return true;
-      } else {
+      } 
         alert("Vérifier données saisies")
-      }
     }
 
   })
