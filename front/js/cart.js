@@ -243,7 +243,7 @@ function form() {
     .then(data => {
       localStorage.setItem("orderId", data.orderId);
       if (validate()) {
-        document.location.href = ''
+        document.location.href = 'confirmation.html?id=' + data.orderId;
       }
     })
 

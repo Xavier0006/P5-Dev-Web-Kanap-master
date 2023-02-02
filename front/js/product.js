@@ -71,12 +71,16 @@ let update = false;
 // Vérifier qu'il n'y a pas de doublon 
 
 if (addCartToLocalStorage) {
-  addCartToLocalStorage.array.forEach(element => {
-    
+  addCartToLocalStorage.forEach(function  (productFinal, key){
+    if (productFinal.id == id && productFinal.colors == choseColors.value) {
+        addCartToLocalStorage[key].quantity = parseInt(productFinal.quantity) + parseInt(choseQuantity.value);
+        localStorage.setItem("cart", json.stringify(addCartToLocalStorage));
+        update = true;
+    }
   });
+};
 
-  
-}
+
 
 
 
