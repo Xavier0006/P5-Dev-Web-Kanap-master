@@ -3,7 +3,5 @@
 function payment() {
     const orderId = document.getElementById("orderId");
     orderId.innerHTML = localStorage.getItem("orderId");
-    localStorage.clear();
+    localStorage.removeItem();
 };
-
-// remove item localstorage au lieu d'un clear 
