@@ -227,8 +227,6 @@ function form() {
     contact,
   }
 
-  // trouver un moyen pour faire en sorte d'envoyer les données au serveur et
-  // Dans la confirmation faire seulement un clear 
 
   const postReq = {
     method: 'POST',
