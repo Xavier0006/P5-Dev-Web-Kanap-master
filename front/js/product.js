@@ -18,7 +18,7 @@ const id = params.get("id");
 
 const url = `http://localhost:3000/api/products/${id}`;
 
-alert(url)
+// alert(url)
 
 // Modifier les variables avec une promesse 
 
@@ -48,13 +48,13 @@ const addToCartBtn = document.getElementById("addToCart");
 
 const array1 = [5, 12, 8, 130, 44];
 const found = array1.find(element => element == 123 && element);
-console.log("tableau",found);
+// console.log("tableau", found);
 
 
 
 const pushProduct = (selection) => {
     // rechercher dans le tableau si la selection à le meme id et meme couleur )
-    console.log("id", selection.id, "color",selection.colors)
+    console.log("id", selection.id, "color", selection.colors)
     let findTab = addCartToLocalsorage.find(element => element.id === selection.id)
     if (findTab) {
         findTab.quantity = findTab.quantity + selection.quantity;
@@ -62,25 +62,19 @@ const pushProduct = (selection) => {
         addCartToLocalsorage.push(selection);
     }
     localStorage.setItem("cart", json.stringify(addCartToLocalStorage));
-
-    console.log(pushProduct);
 };
 
 
 let addCartToLocalsorage = JSON.parse(localStorage.getItem("cart"));
-if (addCartToLocalsorage == null) {addCartToLocalsorage = []};
+if (addCartToLocalsorage == null) { addCartToLocalsorage = [] };
 
-addToCartBtn.addEventListener("click", function() {
-
-
-const selection = { 
-    id: id,
-    colors: choseColors.value,
-    quantity: choseQuantity.value,   
-};
-
-pushProduct(selection);
-
+addToCartBtn.addEventListener("click", function () {
+    const selection = {
+        id: id,
+        colors: choseColors.value,
+        quantity: choseQuantity.value,
+    };
+   // pushProduct(selection);
 });
 
 
@@ -107,7 +101,7 @@ let update = false;
         update = true;
     }
   });
-}; */  
+}; */
 
 
 
